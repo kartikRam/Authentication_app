@@ -1,0 +1,44 @@
+/* CSS for app.component */
+
+/* Styling for the form */
+.example-form {
+  width: 100%; /* Setting the width to 100% */
+  max-width: 500px; /* Setting the maximum width to 500px */
+  margin: auto; /* Centering the form horizontally */
+}
+
+/* Styling for full-width form fields */
+.example-full-width {
+  width: 100%; /* Setting the width to 100% */
+}
+
+/* Margin between form fields */
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px; /* Setting left margin to create space between form fields */
+}
+
+/* Styling for form fields */
+.example-container mat-form-field {
+  width: 220px; /* Setting the width of form fields */
+}
+
+/* Margin at the bottom of the form */
+.example-container form {
+  margin-bottom: 20px; /* Setting bottom margin to create space between form and other elements */
+}
+
+/* Margin for child elements within the form */
+.example-container form > * {
+  margin: 12px 0; /* Setting top and bottom margin to 12px and left-right margin to 0 */
+}
+
+/* Margin for radio buttons within the form */
+.example-container .mat-radio-button {
+  margin: 0 12px; /* Setting margin for radio buttons */
+}
+
+/* Styling for form fields container */
+.example-form-fields {
+  display: flex; /* Setting display to flex for form fields */
+  align-items: flex-start; /* Aligning items to the start of the flex container */
+}

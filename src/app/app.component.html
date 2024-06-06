@@ -1,0 +1,17 @@
+<!-- This is the main heading of the page -->
+<h1>Home</h1>
+
+<!-- This is the navigation section of the page -->
+<nav>
+  <!-- This is an unordered list of navigation links -->
+  <ul>
+    <!-- This is a list item containing a link to the Sign-Up page -->
+    <li><a routerLink="/Sign-Up" routerLinkActive="active" ariaCurrentWhenActive="page">Sign-Up</a></li>
+    
+    <!-- This is another list item containing a link to the Log-In page -->
+    <li><a routerLink="/Log-In" routerLinkActive="active" ariaCurrentWhenActive="page">Log-In</a></li>
+  </ul>
+</nav>
+
+<!-- The routed views will be rendered within this <router-outlet> element -->
+<router-outlet></router-outlet>

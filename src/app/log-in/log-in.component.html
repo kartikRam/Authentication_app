@@ -1,0 +1,28 @@
+<!-- A few line breaks for spacing -->
+<br><br><br>
+
+<!-- Heading for the login form -->
+<div style="text-align: center;">
+    <h2>Login Form</h2>
+</div>
+
+<!-- The login form itself -->
+<form class="example-form" [formGroup]="ValidationForm" (ngSubmit)="onSubmit()">
+    <!-- Email input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="Email" formControlName="email">
+        <!-- Error message if email is required -->
+        <mat-error *ngIf="ValidationForm.get('email')?.hasError('required')">Email is required.</mat-error>
+    </mat-form-field>
+
+    <!-- Password input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="password" formControlName="password" placeholder="Password">
+        <!-- Error message if password is required -->
+        <mat-error *ngIf="ValidationForm.get('password')?.hasError('required')">Password is required.</mat-error>
+    </mat-form-field>
+    <br>
+
+    <!-- Submit button -->
+    <button mat-raised-button color="primary">Log In</button>
+</form>

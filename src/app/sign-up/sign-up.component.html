@@ -1,0 +1,60 @@
+<!-- This is a line break to create some space -->
+<br><br><br>
+
+<!-- This div contains a heading for the signup form -->
+<div style="text-align: center;">
+    <h2>Signup Form</h2>
+</div>
+
+<!-- This is the signup form itself -->
+<form class="example-form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <!-- First Name input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" formControlName="firstname">
+        <!-- Error message if first name is required -->
+        <mat-error *ngIf="reactiveForm.get('firstname')?.hasError('required')">FirstName is required.</mat-error>
+    </mat-form-field>
+
+    <!-- Last Name input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastname">
+        <!-- Error message if last name is required -->
+        <mat-error *ngIf="reactiveForm.get('lastname')?.hasError('required')">LastName is required.</mat-error>
+    </mat-form-field>
+
+    <!-- Email input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="Email" formControlName="email">
+        <!-- Error message if email is required or format is not proper -->
+        <mat-error *ngIf="reactiveForm.get('email')?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="reactiveForm.get('email')?.hasError('email')">Email format is not proper.</mat-error>
+    </mat-form-field>
+
+    <!-- Address input field -->
+    <mat-form-field style="width:100%">
+        <textarea matInput placeholder="Address" formControlName="address"></textarea>
+        <!-- Error message if address is required -->
+        <mat-error *ngIf="reactiveForm.get('address')?.hasError('required')">Address is required.</mat-error>
+    </mat-form-field>
+
+    <!-- Gender selection -->
+    <div>
+        <label>Gender: </label>
+        <mat-radio-group formControlName="gender">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+        <!-- Error message if gender is required -->
+        <mat-error *ngIf="reactiveForm.get('gender')?.hasError('required')">Please select a gender.</mat-error>
+    </div>
+
+    <!-- Password input field -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="password" formControlName="password" placeholder="Password">
+        <!-- Error message if password is required -->
+        <mat-error *ngIf="reactiveForm.get('password')?.hasError('required')">Password is required.</mat-error>
+    </mat-form-field>
+
+    <!-- Submit button -->
+    <button mat-raised-button color="primary">Sign Up</button>
+</form>
